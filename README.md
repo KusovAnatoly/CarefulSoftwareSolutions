@@ -25,3 +25,6 @@
 
 Если у вас есть вопросы, вы можете связаться со мной по электронной почте: kusov.anatoly@gmail.com
 или в телеграме: @KusovAnatoly
+
+**ПРИМЕЧАНИЕ**
+В данном исходном коде информация обрабатывается с использованием [System.Data.SqlClient](https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqlclient?view=dotnet-plat-ext-6.0&viewFallbackFrom=netstandard-2.0), [лучше использовать веб-сервис](https://stackoverflow.com/questions/2142070/why-should-a-developer-use-web-services-instead-of-direct-connections-to-a-db)
