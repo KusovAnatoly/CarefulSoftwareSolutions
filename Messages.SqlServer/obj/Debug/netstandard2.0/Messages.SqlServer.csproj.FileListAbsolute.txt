@@ -1,0 +1,13 @@
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\bin\Debug\netstandard2.0\Messages.SqlServer.deps.json
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\bin\Debug\netstandard2.0\Messages.SqlServer.dll
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\bin\Debug\netstandard2.0\Messages.SqlServer.pdb
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\bin\Debug\netstandard2.0\Messages.Models.dll
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\bin\Debug\netstandard2.0\Messages.Models.pdb
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\obj\Debug\netstandard2.0\Messages.SqlServer.csproj.AssemblyReference.cache
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\obj\Debug\netstandard2.0\Messages.SqlServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\obj\Debug\netstandard2.0\Messages.SqlServer.AssemblyInfoInputs.cache
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\obj\Debug\netstandard2.0\Messages.SqlServer.AssemblyInfo.cs
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\obj\Debug\netstandard2.0\Messages.SqlServer.csproj.CoreCompileInputs.cache
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\obj\Debug\netstandard2.0\Messages.SqlServer.csproj.CopyComplete
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\obj\Debug\netstandard2.0\Messages.SqlServer.dll
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.SqlServer\obj\Debug\netstandard2.0\Messages.SqlServer.pdb

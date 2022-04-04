@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Messages.Desktop.UWP.Views.Chats.ChatListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+             xmlns:models="using:Messages.Models">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto" />
+
+            <RowDefinition Height="Auto" />
+
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <AutoSuggestBox PlaceholderText="Поиск чатов"
+                        Margin="10"
+                        QueryIcon="Find"
+                        Grid.Row="0"/>
+
+        <ListView x:ConnectionId='2' x:Name="ListViewChats"
+                  BorderThickness="0"
+                  
+                  Grid.Row="1"
+                  Margin="10">
+
+            <ListView.ItemTemplate>
+
+
+                <DataTemplate                         >
+
+                    <Grid x:ConnectionId='4' Margin="5,10"
+                          HorizontalAlignment="Stretch"
+                          BorderThickness="0">
+
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition MinWidth="100" />
+
+                            <ColumnDefinition />
+
+                        </Grid.ColumnDefinitions>
+
+                        <PersonPicture x:ConnectionId='5'                                       
+                                       Grid.Column="0" />
+
+                        <StackPanel Grid.Column="1"
+                                    Margin="10"
+                                    Orientation="Vertical"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    MinWidth="450"
+                                    >
+
+                            <TextBlock x:ConnectionId='6'                                
+                                       Style="{StaticResource SubtitleTextBlockStyle}" />
+
+                            <TextBlock TextWrapping="Wrap">
+                                
+                                <Run x:ConnectionId='7'                                              />
+                                <Run Text=": " />
+                                <Run x:ConnectionId='8'                                 
+                                     />
+
+                            </TextBlock>
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </Grid>
+
+</UserControl>
+

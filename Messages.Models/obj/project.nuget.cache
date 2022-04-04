@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "X1/+/KI/C0jR/NzambM11rIBDk+FJf+mKGLhm7z7cCABK2WiqTDB9jX6oBKPnEEpae+0NN+UPEAiAlTcNLQngA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kusov\\source\\repos\\CarefulSoftwareSolutions\\Messages.Models\\Messages.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kusov\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\kusov\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

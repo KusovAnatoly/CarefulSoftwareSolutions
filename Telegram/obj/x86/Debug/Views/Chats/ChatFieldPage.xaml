@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="Messages.Desktop.UWP.Views.Chats.ChatFieldPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Messages.Desktop.UWP.Views.Chats"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{StaticResource SystemControlChromeLowAcrylicWindowBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="*"
+                              MaxWidth="450" />
+
+            <ColumnDefinition Width="*" />
+
+            <ColumnDefinition Width="Auto" />
+
+        </Grid.ColumnDefinitions>
+
+        <local:ChatListControl BorderThickness="0"
+                               Grid.Column="0"/>
+
+        <local:ChatControl BorderThickness="0"
+                           Grid.Column="1" />
+
+        <local:ChatInfoControl BorderThickness="0"
+                               MinWidth="300"
+                               Visibility="Collapsed"
+                               Grid.Column="2"/>
+
+    </Grid>
+    
+</Page>
+

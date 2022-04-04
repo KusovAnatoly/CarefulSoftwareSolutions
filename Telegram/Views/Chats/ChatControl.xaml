@@ -1,0 +1,250 @@
+﻿<UserControl x:Class="Messages.Desktop.UWP.Views.Chats.ChatControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:Messages.Desktop.UWP.Views.Chats"
+             xmlns:common="using:Messages.Desktop.UWP.Common"
+             xmlns:models="using:Messages.Models">
+
+    <UserControl.Resources>
+
+        <DataTemplate x:Key="MessageViewTemplate"
+                      x:DataType="models:Message">
+
+            <Grid Height="Auto"
+                  Margin="4"
+                  BorderThickness="0"
+                  HorizontalAlignment="{x:Bind common:Utils.GetAlignment(Alignment)}">
+
+                <StackPanel MinHeight="75"
+                            Width="350"
+                            Padding="10, 0, 0, 10"
+                            Background="{ThemeResource SystemColorHighlightColor}"
+                            CornerRadius="{StaticResource ControlCornerRadius}">
+
+                    <TextBlock Text="{Binding Text}"
+                               Padding="0, 10, 0, 0"
+                               FontSize="20"
+                               Foreground="{ThemeResource SystemColorHighlightTextColor}" />
+
+                    <TextBlock Text="{x:Bind DateTimeSend}"
+                               Padding="0, 0, 0, 10"
+                               FontSize="15"
+                               Foreground="{ThemeResource SystemColorHighlightTextColor}" />
+
+                </StackPanel>
+
+            </Grid>
+
+        </DataTemplate>
+        <Style x:Key="RichEditBixMessage" TargetType="RichEditBox">
+            <Setter Property="Foreground" Value="{ThemeResource TextControlForeground}"/>
+            <Setter Property="Background" Value="{StaticResource SystemControlAcrylicWindowBrush}"/>
+            <Setter Property="ContentLinkForegroundColor" Value="{ThemeResource ContentLinkForegroundColor}"/>
+            <Setter Property="ContentLinkBackgroundColor" Value="{ThemeResource ContentLinkBackgroundColor}"/>
+            <Setter Property="SelectionHighlightColor" Value="{ThemeResource TextControlSelectionHighlightColor}"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollMode" Value="Auto"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Padding" Value="{ThemeResource TextControlThemePadding}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="{ThemeResource IsApplicationFocusVisualKindReveal}"/>
+            <Setter Property="ContextFlyout" Value="{StaticResource TextControlCommandBarContextFlyout}"/>
+            <Setter Property="SelectionFlyout" Value="{StaticResource TextControlCommandBarSelectionFlyout}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RichEditBox">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlHeaderForegroundDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderElement" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SystemControlAcrylicWindowBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderElement" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlBorderBrushDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlForegroundDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PlaceholderTextContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlPlaceholderForegroundDisabled}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderElement" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderElement" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{StaticResource SystemControlAcrylicWindowBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PlaceholderTextContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlPlaceholderForegroundPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlForegroundPointerOver}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PlaceholderTextContentPresenter" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlPlaceholderForegroundFocused}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderElement" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{StaticResource SystemControlAcrylicWindowBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderElement" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlBorderBrushFocused}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlForegroundFocused}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="RequestedTheme">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Light"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="HeaderContentPresenter" ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" FontWeight="Normal" Foreground="{ThemeResource TextControlHeaderForeground}" Margin="{ThemeResource RichEditBoxTopHeaderMargin}" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Top" Visibility="Collapsed" x:DeferLoadStrategy="Lazy"/>
+                            <Border x:Name="BorderElement" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="{TemplateBinding CornerRadius}" MinHeight="{ThemeResource TextControlThemeMinHeight}" MinWidth="{ThemeResource TextControlThemeMinWidth}" Grid.RowSpan="1" Grid.Row="1"/>
+                            <ScrollViewer x:Name="ContentElement" AutomationProperties.AccessibilityView="Raw" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}" IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}" IsTabStop="False" IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}" Margin="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Grid.Row="1" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" ZoomMode="Disabled"/>
+                            <TextBlock x:Name="PlaceholderTextContentPresenter" Foreground="{ThemeResource TextControlPlaceholderForeground}" IsHitTestVisible="False" Margin="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Grid.Row="1" Text="{TemplateBinding PlaceholderText}" TextWrapping="{TemplateBinding TextWrapping}" TextAlignment="{TemplateBinding TextAlignment}"/>
+                            <ContentPresenter x:Name="DescriptionPresenter" AutomationProperties.AccessibilityView="Raw" Content="{TemplateBinding Description}" Foreground="{ThemeResource SystemControlDescriptionTextForegroundBrush}" Grid.Row="2" x:Load="False"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonSendStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="{StaticResource SymbolThemeFontFamily}"/>
+            <Setter Property="MinHeight" Value="{StaticResource PaneToggleButtonHeight}"/>
+            <Setter Property="MinWidth" Value="{StaticResource PaneToggleButtonWidth}"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="{ThemeResource NavigationViewItemBackground}"/>
+            <Setter Property="Foreground" Value="{ThemeResource NavigationViewItemForeground}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource NavigationViewToggleBorderThickness}" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid Background="{StaticResource SystemControlAcrylicWindowBrush}">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+        
+        <!---->
+        <ListView x:Name="ListViewMessages"
+                  Grid.Row="0"
+                  ItemTemplate="{StaticResource MessageViewTemplate}"
+                  BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                  SelectionMode="None">
+
+            <ListView.ItemsPanel>
+
+                <ItemsPanelTemplate>
+
+                    <ItemsStackPanel ItemsUpdatingScrollMode="KeepLastItemInView"
+                                     VerticalAlignment="Bottom" />
+
+                </ItemsPanelTemplate>
+
+            </ListView.ItemsPanel>
+
+            <ListView.ItemContainerStyle>
+
+                <Style TargetType="ListViewItem">
+
+                    <Setter Property="HorizontalContentAlignment"
+                            Value="Stretch" />
+
+                </Style>
+
+            </ListView.ItemContainerStyle>
+
+        </ListView>
+
+        <Grid Background="{StaticResource SystemControlChromeLowAcrylicWindowBrush}"
+              Grid.Row="1"
+              Padding="15">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="Auto" />
+
+                <ColumnDefinition />
+
+                <ColumnDefinition Width="Auto" />
+
+                <ColumnDefinition Width="Auto" />
+
+            </Grid.ColumnDefinitions>
+
+            <Button Style="{StaticResource ButtonSendStyle}"
+                    VerticalAlignment="Center"
+                    Grid.Column="0">
+                <Button.Content>
+                    <FontIcon Glyph="&#xE723;" />
+                </Button.Content>
+            </Button>
+
+            <RichEditBox Style="{StaticResource RichEditBixMessage}"
+                         x:Name="RichEditBoxMessage"
+                         Grid.Column="1"
+                         VerticalAlignment="Center"
+                         DisabledFormattingAccelerators="All"
+                         PlaceholderText="Введите сообщение..."
+                         Margin="5"/>
+
+            <Button Style="{StaticResource ButtonSendStyle}"
+                    VerticalAlignment="Center"
+                    Grid.Column="2">
+                <Button.Content>
+                    <FontIcon Glyph="&#xE76E;" />
+                </Button.Content>
+            </Button>
+
+            <Button Style="{StaticResource ButtonSendStyle}"
+                    VerticalAlignment="Center"
+                    Grid.Column="3"
+                    Click="Button_Click">
+                <Button.Content>
+                    <FontIcon Glyph="&#xE724;" />
+                </Button.Content>
+            </Button>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

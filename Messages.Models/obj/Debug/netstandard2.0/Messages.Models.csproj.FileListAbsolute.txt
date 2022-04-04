@@ -1,0 +1,10 @@
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\bin\Debug\netstandard2.0\Messages.Models.deps.json
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\bin\Debug\netstandard2.0\Messages.Models.dll
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\bin\Debug\netstandard2.0\Messages.Models.pdb
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\obj\Debug\netstandard2.0\Messages.Models.csproj.AssemblyReference.cache
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\obj\Debug\netstandard2.0\Messages.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\obj\Debug\netstandard2.0\Messages.Models.AssemblyInfoInputs.cache
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\obj\Debug\netstandard2.0\Messages.Models.AssemblyInfo.cs
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\obj\Debug\netstandard2.0\Messages.Models.csproj.CoreCompileInputs.cache
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\obj\Debug\netstandard2.0\Messages.Models.dll
+C:\Users\kusov\source\repos\CarefulSoftwareSolutions\Messages.Models\obj\Debug\netstandard2.0\Messages.Models.pdb
