@@ -15,5 +15,5 @@
 или в телеграме: @KusovAnatoly
 
 **ПРИМЕЧАНИЕ**<br />
-В данном исходном коде данные обрабатываются с использованием [System.Data.SqlClient](https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqlclient?view=dotnet-plat-ext-6.0&viewFallbackFrom=netstandard-2.0), [лучше использовать веб-сервис](https://stackoverflow.com/questions/2142070/why-should-a-developer-use-web-services-instead-of-direct-connections-to-a-db)<br />
-Этот проект не использует рекомендуемые лучшие практики
+В данном исходном коде данные обрабатываются с использованием [System.Data.SqlClient](https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqlclient?view=dotnet-plat-ext-6.0&viewFallbackFrom=netstandard-2.0), [лучше использовать веб-сервис](https://stackoverflow.com/questions/2142070/why-should-a-developer-use-web-services-instead-of-direct-connections-to-a-db).<br />
+Этот проект не использует рекомендуемые лучшие практики.
